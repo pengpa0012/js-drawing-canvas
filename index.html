@@ -6,9 +6,20 @@
   <title>JS Drawing Canvas</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <h1 class="text-center text-2xl my-12">JS Drawing Canvas</h1>
+  <div class="max-w-[900px] mx-auto mb-3 flex gap-5">
+    <div class="flex flex-row items-center gap-3">
+      <p class="mr-2">Brush Size</p>
+      <button class="border rounded-md w-[40px] text-center brush-size selected" data-size="5">SM</button>
+      <button class="border rounded-md w-[40px] text-center brush-size" data-size="10">M</button>
+      <button class="border rounded-md w-[40px] text-center brush-size" data-size="15">L</button>
+      <button class="border rounded-md w-[40px] text-center brush-size" data-size="20">XL</button>
+    </div>
+    <button class="border rounded-md px-2 clear-btn">Clear</button>
+  </div>
   <canvas id="canvas" class="w-[900px] h-[700px] mx-auto border-2 rounded-md"></canvas>
 </body>
 </html>
