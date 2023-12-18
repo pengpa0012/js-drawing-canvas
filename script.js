@@ -5,20 +5,25 @@ const rect = canvas.getBoundingClientRect();
 canvas.width = 900
 canvas.height = 700
 let drawSize = 10
+let isDrawing = false
 
-canvas.addEventListener("click", e => {
+canvas.addEventListener("mousemove", e => {
+  if (!isDrawing) return
+  console.log(e.clientX - rect.left,e.clientY - rect.top)
+
   let x = e.clientX - rect.left
   let y = e.clientY - rect.top
 
   ctx.beginPath();
   ctx.arc(x, y, drawSize, 0, 2 * Math.PI);
   ctx.fill();
-
 })
 
+canvas.addEventListener("mousedown", () => isDrawing = true)
+canvas.addEventListener("mouseup", () => isDrawing = false)
+canvas.addEventListener("mouseout", () => isDrawing = false)
 
 // Todo
-// continuous dot on mouse down or something
 // resizing of brushes
 // Colors
 // Save as image
