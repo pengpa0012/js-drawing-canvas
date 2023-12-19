@@ -1,5 +1,5 @@
 const canvas = document.querySelector("#canvas")
-const brushSizes = document.querySelectorAll(".brush-size")
+const brushSizes = document.querySelector(".brush-size")
 const clearBtn = document.querySelector(".clear-btn")
 const colorPicker = document.querySelector(".color-picker")
 
@@ -9,10 +9,10 @@ canvas.width = 900
 canvas.height = 700
 let isDrawing = false
 let brushColor = "#000"
+let selectedBrushSize = 5
 
 canvas.addEventListener("mousemove", e => {
   if (!isDrawing) return
-  const selectedBrushSize = document.querySelector(".selected").attributes["data-size"].value
 
   let x = e.clientX - rect.left
   let y = e.clientY - rect.top
@@ -27,11 +27,8 @@ canvas.addEventListener("mousedown", () => isDrawing = true)
 canvas.addEventListener("mouseup", () => isDrawing = false)
 canvas.addEventListener("mouseout", () => isDrawing = false)
 
-brushSizes.forEach(size => {
-  size.addEventListener("click", () => {
-    brushSizes.forEach(el => el.classList.remove("selected"))
-    size.classList.add("selected")
-  })
+brushSizes.addEventListener("input", (e) => {
+  selectedBrushSize = e.target.value
 })
 
 colorPicker.addEventListener("input", e => {
