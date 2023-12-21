@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <h1 class="text-center text-2xl my-12">JS Drawing Canvas</h1>
-  <div class="max-w-[900px] mx-auto mb-3 flex gap-5">
+  <h1 class="text-center text-2xl my-12 px-4">JS Drawing Canvas</h1>
+  <div class="max-w-[900px] mx-auto mb-3 flex gap-5 px-4">
     <div class="flex flex-row items-center gap-3">
       <p>Brush Size</p>
       <input type="range" min="5" max="50" value="5" class="brush-size">
@@ -19,6 +19,8 @@
     <button class="border rounded-md px-2 save-btn">Save</button>
     <button class="border rounded-md px-2 clear-btn">Clear</button>
   </div>
-  <canvas id="canvas" class="w-[900px] h-[700px] mx-auto border-2 rounded-md"></canvas>
+  <div class="px-4">
+    <canvas id="canvas" class="w-[900px] h-[700px] mx-auto border-2 rounded-md"></canvas>
+  </div>
 </body>
 </html>
